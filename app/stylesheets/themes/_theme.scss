@@ -1,0 +1,151 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+body {
+  background: $body-background;
+  color: $base-color;
+  font: normal 125% / 1.4 $base-font-stack;
+  font-size: $base-font-size;
+  line-height: 1.6;
+  padding: 40px;
+}
+
+h2 {
+  //  width:80%;
+  //  float: left;
+  //  margin-left:10px;
+  //  display: inline-block;
+  font-weight: normal;
+  float: left;
+  width: 60%;
+  margin-left: 59px;
+}
+
+//Main Component
+.my-wallet {
+  background: $my-wallet-background;
+  display: flex;
+}
+
+//Card Components
+.my-wallet-wrapper {
+  background-color: $my-cards-color;
+  float: left;
+  width: 40%;
+}
+
+.trans-wrapper {
+  float: right;
+  width: 60%;
+}
+
+.card-number {
+  color: $card-number-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-expire {
+  color: $card-expire-color;
+}
+
+.card-row {
+  border: $card-row-border;
+  margin: 0 0 30px 50px;
+  padding: 10px;
+  width: 80%;
+
+  &.active {
+    @include rounded(4px);
+    border: $card-row-border-active;
+  }
+}
+
+.card-issuer {
+  &.visa {
+    @include credit-card('../images/visa.png');
+  }
+
+  &.mastercard {
+    @include credit-card('../images/master.png');
+  }
+
+  &.amex {
+    @include credit-card('../images/amex.png');
+  }
+}
+
+//Transaction Components
+.trans-row {
+  height: 42px;
+  margin: 0 0 48px 59px;
+}
+
+.trans-id {
+  color: $trans-id-color;
+  font-size: 19px;
+}
+
+.trans-amount {
+  float: right;
+  margin: 23px 49px 0 0;
+
+  &.debit {
+    @include debit-credit($trans-amount-debit-color);
+  }
+
+  &.credit {
+    @include debit-credit($trans-amount-credit-color);
+  }
+}
+
+.trans-title {
+  color: $trans-title-color;
+  margin-bottom: 10px;
+}
+
+.trans-type,
+.trans-content-wrapper {
+  float: left;
+  height: 42px;
+}
+
+.trans-type {
+  &.credit {
+    @include balance-img('../images/plus.png')
+  }
+
+  &.debit {
+    @include balance-img('../images/minus.png')
+  }
+}
+
+.trans-content-wrapper {
+  margin-right: 65px;
+}
+
+.section-head {
+  height: 125px;
+  width: 100%;
+}
+
+.trans-head {
+  margin-bottom: 40px;
+}
+
+#smaller-border {
+  height: 0.125rem;
+  width: 12rem;
+  margin: -0.75rem auto 0 auto;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.account-balance {
+  float: right;
+  margin: 52px 49px 0 0;
+
+}
+
+.wallet-plus {
+  float: right;
+  margin: 52px 49px 0 0;
+}

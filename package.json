@@ -1,0 +1,34 @@
+{
+  "name": "rvproject",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.16.0",
+    "browserify": "^13.1.0",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-useref": "^3.1.2",
+    "node-font-awesome": "^1.0.2",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-tab-panel": "^2.2.2",
+    "sass-lint": "^1.9.1",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

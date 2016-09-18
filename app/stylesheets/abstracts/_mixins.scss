@@ -1,0 +1,59 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+//credit card images
+@mixin credit-card($img-uri) {
+  background: url($img-uri) no-repeat;
+  height: 44px;
+  margin-bottom: 5px;
+  width: 64px;
+}
+
+//transaction debit/credit
+@mixin debit-credit($color) {
+  color: $color;
+}
+
+@mixin balance-img($img-uri) {
+  background: url($img-uri) no-repeat;
+  height: 20px;
+  margin: 30px 21px 0 0;
+  width: 20px;
+}
+
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
