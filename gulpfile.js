@@ -12,14 +12,14 @@ var config = {
     distDir: './dist'
 };
 
-gulp.task('fonts', function() {
-  gulp.src(fontAwesome.fonts)
-    .pipe(gulp.dest(config.distDir + '/fonts'));
+gulp.task('fonts', function () {
+    gulp.src(fontAwesome.fonts)
+        .pipe(gulp.dest(config.distDir + '/fonts'));
 });
 
-gulp.task('icons', function() {
-  gulp.src(fontAwesome.fonts)
-    .pipe(gulp.dest(config.distDir + '/fonts'));
+gulp.task('icons', function () {
+    gulp.src(fontAwesome.fonts)
+        .pipe(gulp.dest(config.distDir + '/fonts'));
 });
 
 gulp.task('images', function () {
@@ -30,6 +30,9 @@ gulp.task('images', function () {
 gulp.task('html', function () {
     return gulp.src(config.appDir + '/index.html')
         .pipe(gulp.dest(config.distDir))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
 })
 
 gulp.task('js', function () {

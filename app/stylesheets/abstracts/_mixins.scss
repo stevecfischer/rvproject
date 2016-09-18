@@ -36,7 +36,7 @@
 @mixin credit-card($img-uri) {
   background: url($img-uri) no-repeat;
   height: 44px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   width: 64px;
 }
 
@@ -52,8 +52,20 @@
   width: 20px;
 }
 
-@mixin rounded($radius: 0.5em) {
-  -webkit-border-radius: $radius;
+@mixin rounded($radius...) {
   -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
   border-radius: $radius;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -moz-box-shadow: inset $top $left $blur $color;
+    -webkit-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -moz-box-shadow: $top $left $blur $color;
+    -webkit-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
 }

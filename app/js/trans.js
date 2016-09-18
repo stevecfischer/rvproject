@@ -1,18 +1,18 @@
 var TransRow = React.createClass({
     render: function () {
         if (this.props.tran.transtype == "credit") {
-            var transType = <div className="credit trans-type"></div>
+            var transType = "credit trans-row"
         } else {
-            var transType = <div className="debit trans-type"></div>
+            var transType = "debit trans-row"
         }
         return (
-            <div className="trans-row">
-                {transType}
+            <div className={transType}>
+                <div className="trans-type"></div>
                 <div className="tran trans-content-wrapper">
                     <div className="trans-title">{this.props.tran.title}</div>
                     <div className="trans-id">{this.props.tran.transid}</div>
                 </div>
-                <div className="tran trans-amount">{this.props.tran.amount}</div>
+                <div className="tran trans-amount">${this.props.tran.amount}</div>
             </div>
         );
     }
@@ -47,7 +47,7 @@ var CardRow = React.createClass({
             </div>
         );
     }
-})
+});
 
 var TransHead = React.createClass({
     render: function () {
@@ -55,7 +55,7 @@ var TransHead = React.createClass({
             <div className="section-head trans-head">
                 <h2>Current Balance</h2>
                 <div className="account-balance">$729.92</div>
-                <div id="smaller-border"></div>
+                <div className="smaller-border"></div>
             </div>
         )
     }
@@ -89,7 +89,7 @@ var MyCards = React.createClass({
 var MyWallet = React.createClass({
     render: function () {
         return (
-            <div className="my-wallet">
+            <div className="container">
                 <div className="my-wallet-wrapper">
                     <MyCardsHead /> <MyCards cards={this.props.cards}/>
                 </div>
@@ -123,5 +123,5 @@ var TRANS = [
 
 ReactDOM.render(
     <MyWallet cards={CARDS} trans={TRANS}/>,
-    document.getElementById('container')
+    document.getElementById('app')
 );
