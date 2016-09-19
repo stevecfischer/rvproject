@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglifyjs');
-var useref = require('gulp-useref');
 var fontAwesome = require('node-font-awesome');
 
 var browserSync = require('browser-sync').create();
@@ -48,7 +46,8 @@ gulp.task('sass', function () {
     return gulp.src(config.appDir + '/stylesheets/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
-            includePaths: [fontAwesome.scssPath]
+            includePaths: [fontAwesome.scssPath],
+            outputStyle: 'compressed'
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.distDir + '/css'))
@@ -64,12 +63,6 @@ gulp.task('watch', ['browserSync', 'sass', 'html', 'js', 'images'], function () 
     // Other watchers
 });
 
-// gulp.task('useref', function () {
-//     return gulp.src(config.appDir + '/*.html')
-//         .pipe(useref())
-//         .pipe(gulpIf('*.js', uglify()))
-//         .pipe(gulp.dest(config.distDir))
-// });
 
 gulp.task('browserSync', function () {
     browserSync.init({
