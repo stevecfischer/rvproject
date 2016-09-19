@@ -3,5 +3,5 @@
 ## Example Project for RV
 
 ## Installation:
- * `npm install`
- * `gulp watch`
+ * `npm install` to pull all packages
+ * `gulp watch` to build
