@@ -8399,7 +8399,7 @@ var ReactDOMFactories = {
   select: createDOMFactory('select'),
   small: createDOMFactory('small'),
   source: createDOMFactory('source'),
-  span: createDOMFactory('span'),
+  span: createDOMFactory('closeModal'),
   strong: createDOMFactory('strong'),
   style: createDOMFactory('style'),
   sub: createDOMFactory('sub'),

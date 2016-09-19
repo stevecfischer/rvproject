@@ -179,10 +179,19 @@ h2 {
 .wallet-plus {
   float: right;
   margin: $section-title-margin;
+  a {
+    cursor: pointer;
+  }
   //margin-right: 49px;
 }
 
 .my-cards {
   margin: 0 auto;
   width: 75%;
+}
+
+#new-card-form {
+  display: inline-block;
+  margin: 20px auto;
+  width: 100%;
 }

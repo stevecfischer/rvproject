@@ -1,0 +1,88 @@
+// Placeholder Mixin
+// ====================================
+
+$pseudo-placeholder: "::-webkit-input-placeholder" "::-moz-placeholder" ":-ms-input-placeholder" "::placeholder";
+
+@mixin placeholder-theme($placeholder-styles) {
+  @each $pseudo in $pseudo-placeholder {
+    @at-root #{&}#{$pseudo} {
+      @each $key, $value in $placeholder-styles {
+        #{$key}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin placeholder {
+  @each $pseudo in $pseudo-placeholder {
+    @at-root #{&}#{$pseudo} {
+      @content
+    }
+  }
+}
+
+#form-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.new-card-form-submit {
+    width: 100px;
+    float: right;
+    margin-right: 17px;
+}
+
+label {
+  display: inline-block;
+  float: left;
+  width: 40%;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  border: none;
+}
+
+// Jumping Placeholder
+// ====================================
+
+$jpinput-height: 40px;
+$jpinput-radius: 4px;
+$jpinput-padding: 10px 16px;
+$jpinput-bg: $white;
+$jpinput-color: #4F4137;
+$jpinput-ph-color: $jpinput-color;
+$jpinput-phide-color: $jpinput-bg;
+
+input {
+  appearance: none;
+  box-sizing: border-box;
+  border-radius: $jpinput-radius;
+  display: inline-block;
+  outline: 0;
+  width: 50%;
+  float: right;
+}
+
+.jpinput {
+  height: $jpinput-height;
+  padding: $jpinput-padding;
+  transition: transform 225ms ease-in-out;
+  background: $jpinput-bg;
+  color: $jpinput-color;
+
+  @include placeholder {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 300ms ease-in-out;
+    color: rgba($jpinput-ph-color, .5);
+  }
+}
+
+.jpinput::-webkit-input-placeholder[style*=hidden] {
+  transform: translateY(-$jpinput-height);
+  opacity: 1;
+  visibility: visible !important;
+  color: $jpinput-phide-color;
+}

@@ -59,7 +59,7 @@ gulp.task('sass', function () {
 
 gulp.task('watch', ['browserSync', 'sass', 'html', 'js', 'images'], function () {
     gulp.watch(config.appDir + '/stylesheets/**/*.scss', ['sass']);
-    gulp.watch(config.appDir + '/*.html', browserSync.reload);
+    gulp.watch(config.appDir + '/*.html', ['html']);
     gulp.watch(config.appDir + '/js/**/*.js', ['js']);
     // Other watchers
 });

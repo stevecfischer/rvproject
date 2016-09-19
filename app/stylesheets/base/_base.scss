@@ -26,6 +26,6 @@ a {
   text-decoration: none;
 
   @include on-event {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
